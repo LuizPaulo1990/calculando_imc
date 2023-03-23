@@ -20,38 +20,45 @@ function calcular(){
 
         imc = imc.toFixed(2);
         
-        
+        var img = document.createElement('img');
 
         if (imc < 18.5){
             
-            resultado.innerHTML = `Você está baixo do peso, seu IMC é ${imc}`;
+            resultado.innerHTML = `Você está baixo do peso, coma mais! seu IMC é ${imc}`;
+            img.setAttribute('src', 'imagens/caveira.jpg');
 
         } else if(imc < 24.9){
 
             resultado.innerHTML = `Você está com peso ideal, seu IMC é ${imc}`;
+            img.setAttribute('src', 'imagens/parabens.jpg');
 
         } else if (imc < 29.9){
 
             resultado.innerHTML = `Você está levemente acima do peso, seu IMC é ${imc}`;
+            img.setAttribute('src', 'imagens/abaixo.jpg')
 
         }else if(imc < 34.9){
 
             resultado.innerHTML = `Você está na obesidade grau 1, seu IMC é ${imc}`;
+            img.setAttribute('src', 'imagens/workout.jpg');
             
 
         }  else if (imc < 39.9){
 
-            resultado.innerHTML = `Você está com obesidade grau 2 coniderada severa, seu IMC é ${imc}`;
+            resultado.innerHTML = `obesidade grau 2 (severa),IMC ${imc} CUIDADO!`;
+            img.setAttribute('src', 'imagens/gordinho.jpg');
 
         }else{
 
-            resultado.innerHTML = `Você está com obesidade grau 3 coniderada mórbida, seu IMC é ${imc}`;
+            resultado.innerHTML = `obesidade grau 3 (mórbida), IMC ${imc} CUIDADO!`;
+            img.setAttribute('src', 'imagens/tumulo.jpg');
         }
 
 
     }
 
-    
+    resultado.style.textAlign = 'center';
+    resultado.appendChild(img);
    
 
 
